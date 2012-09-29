@@ -3,7 +3,7 @@
 Hex is a 'strategy board game' played on a hexagonal grid. 
 In alternate moves, the aim of the game is to be the first player, to form a connected path joining two opposite edges. The first player is supposed to connect the left edge to the right edge, and the second is supposed to connect the top edge to the bottom.
 
-You can read about it in full detail [here](http://en.wikipedia.org/wiki/Hex_(board_game) "Hex - Wikipedia article").
+You can read about it in full detail [here](http://en.wikipedia.org/wiki/Hex_(board_game). 
 
 ###Shortcomings
 
