@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -8,9 +12,13 @@
         android:id="@+id/anch1"
         android:layout_width="fill_parent"
         android:layout_height="25dp" />
-
-    <FrameLayout
+    
+    <HorizontalScrollView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp" >
 
@@ -145,6 +153,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="64dp" >
+            
+            <View
+                android:layout_width="40dp"
+                android:layout_height="fill_parent" />
 
             <ImageView
                 android:id="@+id/h15"
@@ -209,7 +221,7 @@
             android:paddingTop="96dp" >
 
             <View
-                android:layout_width="20dp"
+                android:layout_width="60dp"
                 android:layout_height="fill_parent" />
 
             <ImageView
@@ -273,6 +285,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="128dp" >
+            
+            <View
+                android:layout_width="80dp"
+                android:layout_height="fill_parent" />
 
             <ImageView
                 android:id="@+id/h29"
@@ -337,7 +353,7 @@
             android:paddingTop="160dp" >
 
             <View
-                android:layout_width="20dp"
+                android:layout_width="100dp"
                 android:layout_height="fill_parent" />
 
             <ImageView
@@ -401,6 +417,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="192dp" >
+            
+            <View
+                android:layout_width="120dp"
+                android:layout_height="fill_parent" />
 
             <ImageView
                 android:id="@+id/h43"
@@ -460,6 +480,8 @@
         </LinearLayout>
     </FrameLayout>
 
+    </HorizontalScrollView>
+    
     <View
         android:layout_width="fill_parent"
         android:layout_height="40dp" />
@@ -500,3 +522,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

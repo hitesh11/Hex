@@ -17,7 +17,6 @@ public final class R {
         public static final int hex2win=0x7f020003;
         public static final int hexagon=0x7f020004;
         public static final int ic_launcher=0x7f020005;
-        public static final int ic_launcher2=0x7f020006;
     }
     public static final class id {
         public static final int anch1=0x7f050000;

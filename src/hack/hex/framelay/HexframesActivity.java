@@ -9,18 +9,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class HexframesActivity extends Activity {
 
 	int[][] board = new int[7][7];
-	int move = 0;
+	int move = 0, undo = 0;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//ScrollView sv = new ScrollView(this);
+		//LinearLayout l1 = new LinearLayout(this);
+		
 		setContentView(R.layout.main);
 	}
 
@@ -48,7 +53,9 @@ public class HexframesActivity extends Activity {
 			}
 			int player = move % 2;
 			checkboard(player, cell1, cell2);
-			
+			if (undo == 0){
+				undo++;
+			}
 			move = move + 1;
 			int p2 = move;
 			p2 = move % 2;
@@ -66,21 +73,32 @@ public class HexframesActivity extends Activity {
 	int lastmove;
 	View v2;
 	
-	public void undo(View v){
-		int c1 = 0, c2 = 0;
-		c1 = lastmove / 7;
-		c2 = lastmove % 7;
-		board[c1][c2] = 0;
-		int lid = 0;
-		lid = lastmove + 2131034113;
-		ImageView b = (ImageView) findViewById(lid);
-		b.setImageResource(R.drawable.hexagon);
-		move = move - 1;
-		int p2;
-		p2 = move % 2;
-		p2 = p2 + 1;
-		TextView tv = (TextView) findViewById(R.id.tv1);
-		tv.setText("Player " + p2 + "'s move");
+	public void undo(View v) {
+		if (undo == 1) {
+			int c1 = 0, c2 = 0;
+			c1 = lastmove / 7;
+			c2 = lastmove % 7;
+			board[c1][c2] = 0;
+			int lid = 0;
+			lid = lastmove + 2131034113;
+			ImageView b = (ImageView) findViewById(lid);
+			b.setImageResource(R.drawable.hexagon);
+			move = move - 1;
+			int p2;
+			p2 = move % 2;
+			p2 = p2 + 1;
+			TextView tv = (TextView) findViewById(R.id.tv1);
+			tv.setText("Player " + p2 + "'s move");
+			undo--;
+		} else
+			if(move == 0){
+				Toast.makeText(getApplicationContext(), "Game yet to begin",
+						Toast.LENGTH_SHORT).show();
+			}
+			else{
+				Toast.makeText(getApplicationContext(), "Last move undoed",
+					Toast.LENGTH_SHORT).show();
+			}
 	}
 
 	public void checkboard(int player, int x, int y) {
