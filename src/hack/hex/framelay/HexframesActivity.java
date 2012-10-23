@@ -216,8 +216,8 @@ public class HexframesActivity extends Activity {
 		// if (x % 2 == 0) {
 		if (x - 1 >= 0 && board[x - 1][y] == player)
 			recurse(player, x - 1, y);
-		if (x - 1 >= 0 && y - 1 >= 0 && board[x - 1][y - 1] == player)
-			recurse(player, x - 1, y - 1);
+		if (x - 1 >= 0 && y + 1 <= 6 && board[x - 1][y + 1] == player)
+			recurse(player, x - 1, y + 1);
 		if (y - 1 >= 0 && board[x][y - 1] == player)
 			recurse(player, x, y - 1);
 		if (y + 1 <= 6 && board[x][y + 1] == player)
